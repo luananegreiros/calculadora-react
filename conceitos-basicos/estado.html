@@ -11,14 +11,21 @@
             margin: 10px;
         }
 
+        .titulo {
+            display: grid;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
         .contador {
             display: grid;
             justify-content: center;
+            margin-top: 50px;
         }
 
     </style>
 
-    <title> React - estado </title>
+    <title> Contador </title>
 </head>
 
 <body>
@@ -30,7 +37,7 @@
     
     <script type="text/babel">
 
-        function App() {
+        function Contador() {
 
             const array = React.useState(0);
             const state = array[0];
@@ -46,6 +53,7 @@
                     >
                         Somar 1
                     </button>
+
                     <button 
                         onClick={() => {
                             setState(state-1);
@@ -53,8 +61,28 @@
                     >
                         Subtrair 1
                     </button>
+
+                    <button 
+                        onClick={() => {
+                            setState(function (prevState) {
+                                return prevState + 3
+                            });
+                        }}
+                    >
+                        Somar 3
+                    </button>
                 </div>
             );
+            }
+
+            const App = () => {
+                return (
+                    <div class="titulo">
+                        <p> Contador </p>
+                        <Contador />
+                        <Contador />
+                    </div>
+                )
             }
             
             ReactDOM.render(
