@@ -138,6 +138,7 @@
             const [history, setHistory] = React.useState([]);
             const [showHist, toggleHist] = React.useState(false);
             const histRef = React.useRef();
+            const displayInput = React.useRef();
 
             React.useEffect(() => {
                 if (error) {
@@ -152,6 +153,10 @@
                 }
                
             }, [history.length, showHist]);
+
+            React.useEffect(() => {
+                displayInput.current.focus();
+            },[]);
 
             const doTheMath = () => {
 
@@ -230,10 +235,11 @@
                         </div>
                     )}
 
-                    <input 
+                    <input
                         type="text"
                         className="display"
                         value={display}
+                        ref={displayInput}
                         onChange={event => {
                             const {value} = event.target;
 
@@ -249,7 +255,7 @@
                             }
                         }}
                     />
-
+                    
                     {error && (
                         <p className="error">{error}</p>
                     )}
