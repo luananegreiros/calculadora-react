@@ -7,5 +7,5 @@ Essa é uma calculadora que criei utilizando React :)
 ### 🚀 Para rodar:
 
 - [ ] Clone esse repositório na sua máquina 
-- [ ] Abra o repositório em sua máquina e clique em `calculadora.html`
+- [ ] Abra-o em sua máquina e clique em `calculadora.html`
 - [ ] Se divirta!
